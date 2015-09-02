@@ -17,8 +17,10 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 VOLUME ["/var/cache/nginx"]
 
-ADD sites-enabled/ /etc/nginx/sites-enabled/
-ADD app/ /app/
+#ADD sites-enabled/ /etc/nginx/sites-enabled/
+#ADD app/ /app/
+
+COPY app/ /usr/share/nginx/html
 
 EXPOSE 80 443
 
