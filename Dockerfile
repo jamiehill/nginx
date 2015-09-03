@@ -19,4 +19,5 @@ VOLUME ["/var/cache/nginx"]
 
 EXPOSE 80 443
 
-CMD ["nginx", "-g", "daemon off;"]
+chown -R www-data:www-data /var/lib/nginx && \
+ONBUILD CMD ["nginx", "-g", "daemon off;"]
